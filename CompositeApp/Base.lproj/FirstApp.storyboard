@@ -1,7 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XRe-dc-n8e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Part 1-->
+        <scene sceneID="co0-fJ-QyS">
+            <objects>
+                <viewController id="XRe-dc-n8e" userLabel="Part 1" customClass="CurrencyViewController" customModule="CompositeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="czj-Li-KAk"/>
+                        <viewControllerLayoutGuide type="bottom" id="K8F-hb-GXm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yg4-PK-yAJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae3-4x-IZb">
+                                <rect key="frame" x="16" y="214" width="343" height="433"/>
+                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hwo-yv-HRp">
+                                <rect key="frame" x="16" y="50" width="343" height="114"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="b5X-AG-e75">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAz-e8-Re8">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="x5V-8I-yhn">
+                                                <rect key="frame" x="90" y="0.0" width="253" height="36"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4O-Le-2FX">
+                                        <rect key="frame" x="119" y="66" width="106" height="48"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="106" id="OAG-Kh-8LA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Convert"/>
+                                        <connections>
+                                            <action selector="OnConvertTap:" destination="XRe-dc-n8e" eventType="touchUpInside" id="moE-Fy-xIs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="b5X-AG-e75" firstAttribute="width" secondItem="hwo-yv-HRp" secondAttribute="width" id="8Id-MR-bTH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Id-MR-bTH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="20"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8Id-MR-bTH"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hwo-yv-HRp" firstAttribute="leading" secondItem="yg4-PK-yAJ" secondAttribute="leadingMargin" id="5HL-yI-xyT"/>
+                            <constraint firstItem="Ae3-4x-IZb" firstAttribute="top" secondItem="hwo-yv-HRp" secondAttribute="bottom" constant="50" id="8Qv-FB-ddr">
+                                <variation key="heightClass=compact-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="hwo-yv-HRp" firstAttribute="top" secondItem="czj-Li-KAk" secondAttribute="bottom" constant="30" id="CeA-JV-KRR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hwo-yv-HRp" secondAttribute="trailing" id="EBQ-FA-Eac"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ae3-4x-IZb" secondAttribute="trailing" id="Jlc-Jh-vHo"/>
+                            <constraint firstItem="K8F-hb-GXm" firstAttribute="top" secondItem="Ae3-4x-IZb" secondAttribute="bottom" constant="20" id="LdI-K1-XMl"/>
+                            <constraint firstItem="Ae3-4x-IZb" firstAttribute="leading" secondItem="yg4-PK-yAJ" secondAttribute="leadingMargin" id="Xrm-rb-XnL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Currency Converter" id="3NA-iv-hOq" userLabel="Navigation Item"/>
+                    <connections>
+                        <outlet property="ConvertButtonOutlet" destination="P4O-Le-2FX" id="LT3-Pa-ICX"/>
+                        <outlet property="InputTextOutlet" destination="x5V-8I-yhn" id="uKb-Zl-cgv"/>
+                        <outlet property="MainLabelOutlet" destination="OAz-e8-Re8" id="eV3-RI-yor"/>
+                        <outlet property="ScrollViewOutlet" destination="Ae3-4x-IZb" id="yfp-vw-jj4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXp-pz-HZF" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hVR-DT-HMu">
+                    <rect key="frame" x="0.0" y="0.0" width="182" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </objects>
+            <point key="canvasLocation" x="1860.8695652173915" y="-323.64130434782612"/>
+        </scene>
+    </scenes>
 </document>

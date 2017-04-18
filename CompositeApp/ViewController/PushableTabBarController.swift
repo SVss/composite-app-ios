@@ -8,6 +8,6 @@
 
 import UIKit
 
-class PushableTabBarViewController: UITabBarController {
+class PushableTabBarController: UITabBarController {
     
 }

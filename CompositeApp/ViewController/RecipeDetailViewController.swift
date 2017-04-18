@@ -12,7 +12,7 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelAuthor: UILabel!
-    @IBOutlet weak var labelDescription: UILabel!
+    @IBOutlet weak var textDescription: UITextView!
 
     var _recipe: RecipeModelItem?
     
@@ -21,7 +21,7 @@ class RecipeDetailViewController: UIViewController {
         if let recipe = _recipe {
             labelName?.text = recipe.name
             labelAuthor?.text = recipe.author
-            labelDescription?.text = recipe.description
+            textDescription?.text = recipe.description
             imageView?.image = UIImage(contentsOfFile: recipe.imagePath!)
         }
         
