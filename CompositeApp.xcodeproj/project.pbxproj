@@ -98,16 +98,16 @@
 		84C8F1F01E82BF91005304F1 /* CompositeApp */ = {
 			isa = PBXGroup;
 			children = (
+				84C8F21E1EA6321F005304F1 /* data */,
+				84C8F2121EA62E86005304F1 /* FirstApp.storyboard */,
+				84C8F2151EA62F8C005304F1 /* SecondApp.storyboard */,
 				84C8F22E1EA63843005304F1 /* ThirdApp.storyboard */,
-				84C8F2291EA63802005304F1 /* FullMapViewController.swift */,
-				84C8F22A1EA63802005304F1 /* WeatherTableViewController.swift */,
 				84C8F2221EA637F8005304F1 /* City.swift */,
 				84C8F2231EA637F8005304F1 /* CityAnnotation.swift */,
+				84C8F2291EA63802005304F1 /* FullMapViewController.swift */,
+				84C8F22A1EA63802005304F1 /* WeatherTableViewController.swift */,
 				84C8F2241EA637F8005304F1 /* WeatherModel.swift */,
-				84C8F21E1EA6321F005304F1 /* data */,
 				84C8F21C1EA63050005304F1 /* RecipesModel.swift */,
-				84C8F2151EA62F8C005304F1 /* SecondApp.storyboard */,
-				84C8F2121EA62E86005304F1 /* FirstApp.storyboard */,
 				84C8F2181EA62FDA005304F1 /* RecipeDetailViewController.swift */,
 				84C8F2191EA62FDA005304F1 /* RecipesTableViewController.swift */,
 				84C8F2101EA60E34005304F1 /* CurrencyViewController.swift */,

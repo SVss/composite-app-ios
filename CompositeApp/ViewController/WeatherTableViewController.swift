@@ -16,6 +16,7 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var weatherMapOutlet: MKMapView!
     
     var refreshControl: UIRefreshControl!
+    var showNextView: Bool = true
     
     lazy var weatherModel: WeatherModel = WeatherModel.getInstance()
 
@@ -65,6 +66,10 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
         super.didReceiveMemoryWarning()
     }
 
+    func onScreenRotate() {
+        showNextView = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -85,10 +90,12 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showDetailWeatherMap") {
-            let detailViewController = segue.destination as! FullMapViewController
-            let city = weatherModel.getWeather[(self.tableViewOutlet.indexPathForSelectedRow?.row)!]
-            detailViewController.setCityIdToShow(city.id)
+        if (showNextView) {
+            if (segue.identifier == "showDetailWeatherMap") {
+                let detailViewController = segue.destination as! FullMapViewController
+                let city = weatherModel.getWeather[(self.tableViewOutlet.indexPathForSelectedRow?.row)!]
+                detailViewController.setCityIdToShow(city.id)
+            }
         }
     }
     
