@@ -1,0 +1,41 @@
+{
+    "images_path": "images/",
+    "recipes": [
+    {
+        "img": "0.jpg",
+        "name": "Spicy Gingerbread Men",
+        "author": "Stephanie Schneidewind",
+        "desc": "Spicy gingerbread men. This is the only recipe we have ever used. For best flavor, do NOT use blackstrap molasses."
+    },
+    {
+        "img": "1.jpg",
+        "name": "Golden Rum Cake",
+        "author": "Jackie Smith",
+        "desc": "My family requests this rummy Bundt cake from me at all our get-togethers. The butter rum glaze makes it special. An easy way to glaze your cake is to pour half of the glaze into Bundt pan, reinsert cake, then pour the rest of glaze over the bottom of the cake. Let absorb well then invert back onto platter."
+    },
+    {
+        "img": "2.jpg",
+        "name": "Whipped Cream Cream Cheese Frosting",
+        "author": "Tom",
+        "desc": "A decadent whipped cream and cream cheese frosting that has everyone asking if they can lick the bowl. It pipes very well."
+    },
+    {
+        "img": "3.jpg",
+        "name": "Black Magic Cake",
+        "author": "Marsha",
+        "desc": "Super spooky dark chocolate cake. Suitable for all your black magic get-togethers."
+    },
+    {
+        "img": "4.jpg",
+        "name": "Flourless Peanut Butter Cookies",
+        "author": "Stephanie T.",
+        "desc": "Heavy, yummy, and very peanut-buttery. You'll need lots of milk to eat these!!"
+    },
+    {
+        "img": "5.jpg",
+        "name": "Strawberry Cheesecake",
+        "author": "Kathy Higgins",
+        "desc": "This creamy strawberry cheesecake is perfect for any special occasion! You have to bake the cake and let it cool for an hour, then chill it in the refrigerator for at least 4 hours prior to serving."
+    }
+    ]
+}
