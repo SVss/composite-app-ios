@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		84C8F1F21E82BF91005304F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F1F11E82BF91005304F1 /* AppDelegate.swift */; };
-		84C8F1F41E82BF91005304F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F1F31E82BF91005304F1 /* ViewController.swift */; };
+		84C8F1F41E82BF91005304F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F1F31E82BF91005304F1 /* MainViewController.swift */; };
 		84C8F1F71E82BF91005304F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C8F1F51E82BF91005304F1 /* Main.storyboard */; };
 		84C8F1F91E82BF91005304F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C8F1F81E82BF91005304F1 /* Assets.xcassets */; };
 		84C8F1FC1E82BF91005304F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C8F1FA1E82BF91005304F1 /* LaunchScreen.storyboard */; };
+		84C8F2111EA60E34005304F1 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F2101EA60E34005304F1 /* CurrencyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84C8F1EE1E82BF91005304F1 /* CompositeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C8F1F11E82BF91005304F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84C8F1F31E82BF91005304F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84C8F1F31E82BF91005304F1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84C8F1F61E82BF91005304F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84C8F1F81E82BF91005304F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C8F1FB1E82BF91005304F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C8F1FD1E82BF91005304F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C8F2101EA60E34005304F1 /* CurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrencyViewController.swift; path = ViewController/CurrencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +56,9 @@
 		84C8F1F01E82BF91005304F1 /* CompositeApp */ = {
 			isa = PBXGroup;
 			children = (
+				84C8F2101EA60E34005304F1 /* CurrencyViewController.swift */,
 				84C8F1F11E82BF91005304F1 /* AppDelegate.swift */,
-				84C8F1F31E82BF91005304F1 /* ViewController.swift */,
+				84C8F1F31E82BF91005304F1 /* MainViewController.swift */,
 				84C8F1F51E82BF91005304F1 /* Main.storyboard */,
 				84C8F1F81E82BF91005304F1 /* Assets.xcassets */,
 				84C8F1FA1E82BF91005304F1 /* LaunchScreen.storyboard */,
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C8F1F41E82BF91005304F1 /* ViewController.swift in Sources */,
+				84C8F1F41E82BF91005304F1 /* MainViewController.swift in Sources */,
+				84C8F2111EA60E34005304F1 /* CurrencyViewController.swift in Sources */,
 				84C8F1F21E82BF91005304F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +269,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bsuir.sv.CompositeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -278,6 +283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bsuir.sv.CompositeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,26 +1,181 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CA8-Hx-gCC">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Main" customClass="MainViewController" customModule="CompositeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="jal-DC-VhN">
+                                <rect key="frame" x="62.666666666666657" y="190.66666666666663" width="289" height="355"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HLt-Vz-KCN">
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="51"/>
+                                        <fontDescription key="fontDescription" name=".SFNSDisplay-Regular" family=".SF NS Display" pointSize="33"/>
+                                        <state key="normal" title="Currency Converter"/>
+                                        <connections>
+                                            <segue destination="qXh-ra-VDf" kind="show" identifier="firstApp" id="Nvc-nI-kGZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDz-Hp-UZ4">
+                                        <rect key="frame" x="0.0" y="151.00000000000003" width="289" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <state key="normal" title="Collection">
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m62-gL-s6O">
+                                        <rect key="frame" x="0.0" y="303" width="289" height="51.999999999999943"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <state key="normal" title="Map">
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="70"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jal-DC-VhN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V2r-jL-uP6"/>
+                            <constraint firstItem="jal-DC-VhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kaP-fJ-h0e"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Menu" id="RHg-FG-XXl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="883.59375" y="122.46093749999999"/>
+        </scene>
+        <!--Part 1-->
+        <scene sceneID="xrf-a2-0Sk">
+            <objects>
+                <viewController id="qXh-ra-VDf" userLabel="Part 1" customClass="CurrencyViewController" customModule="CompositeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dNH-QA-SAK"/>
+                        <viewControllerLayoutGuide type="bottom" id="IfC-Wu-xfT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vf2-05-HWp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkd-04-vU5">
+                                <rect key="frame" x="20" y="258" width="374" height="458"/>
+                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-j4-yO9">
+                                <rect key="frame" x="20" y="94" width="374" height="114"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="p6S-Dd-27r">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPV-pB-xLi">
+                                                <rect key="frame" x="0.0" y="0.0" width="64.666666666666671" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2IC-Rf-MQF">
+                                                <rect key="frame" x="89.666666666666657" y="0.0" width="284.33333333333337" height="36"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnJ-dK-34t">
+                                        <rect key="frame" x="134" y="66" width="106" height="48"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="106" id="oXf-NL-zhN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Convert"/>
+                                        <connections>
+                                            <action selector="OnConvertTap:" destination="qXh-ra-VDf" eventType="touchUpInside" id="smX-Yd-3fD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="p6S-Dd-27r" firstAttribute="width" secondItem="n0e-j4-yO9" secondAttribute="width" id="wdK-Vo-e9t"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wdK-Vo-e9t"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="20"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="wdK-Vo-e9t"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xkd-04-vU5" firstAttribute="leading" secondItem="Vf2-05-HWp" secondAttribute="leadingMargin" id="1ZI-Px-lyi"/>
+                            <constraint firstItem="xkd-04-vU5" firstAttribute="top" secondItem="n0e-j4-yO9" secondAttribute="bottom" constant="50" id="30k-4P-RRM">
+                                <variation key="heightClass=compact-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="n0e-j4-yO9" secondAttribute="trailing" id="A3l-JP-k1J"/>
+                            <constraint firstItem="n0e-j4-yO9" firstAttribute="top" secondItem="dNH-QA-SAK" secondAttribute="bottom" constant="30" id="FZT-ET-4Sf"/>
+                            <constraint firstItem="n0e-j4-yO9" firstAttribute="leading" secondItem="Vf2-05-HWp" secondAttribute="leadingMargin" id="L2j-jn-n53"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xkd-04-vU5" secondAttribute="trailing" id="LLo-M4-N8Z"/>
+                            <constraint firstItem="IfC-Wu-xfT" firstAttribute="top" secondItem="xkd-04-vU5" secondAttribute="bottom" constant="20" id="dxQ-Tq-DGv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Currency Converter" id="Igw-CZ-55m" userLabel="Navigation Item"/>
+                    <connections>
+                        <outlet property="ConvertButtonOutlet" destination="WnJ-dK-34t" id="ckO-S3-tRh"/>
+                        <outlet property="InputTextOutlet" destination="2IC-Rf-MQF" id="LNE-ko-eLY"/>
+                        <outlet property="MainLabelOutlet" destination="XPV-pB-xLi" id="Jhv-ji-Dy5"/>
+                        <outlet property="ScrollViewOutlet" destination="xkd-04-vU5" id="Y5p-u5-aD4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9R-3H-FBb" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bin-P4-9Ff">
+                    <rect key="frame" x="0.0" y="0.0" width="182" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </objects>
+            <point key="canvasLocation" x="1860.8695652173915" y="-323.64130434782612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CR2-v9-x9J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CA8-Hx-gCC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jnv-yB-1e7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="n4j-2c-kLX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAX-EU-qH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.96875" y="122.46093749999999"/>
         </scene>
     </scenes>
 </document>
