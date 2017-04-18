@@ -16,7 +16,7 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var weatherMapOutlet: MKMapView!
     
     var refreshControl: UIRefreshControl!
-    var showNextView: Bool = true
+    var showNextView: Bool = UIDevice.current.orientation.isPortrait
     
     lazy var weatherModel: WeatherModel = WeatherModel.getInstance()
 
@@ -66,8 +66,13 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
         super.didReceiveMemoryWarning()
     }
 
-    func onScreenRotate() {
-        showNextView = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        showNextView = UIDevice.current.orientation.isPortrait
+        if showNextView {
+            print("Landscape")
+        } else {
+            print("Portrait")
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,13 +94,15 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return showNextView
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (showNextView) {
-            if (segue.identifier == "showDetailWeatherMap") {
-                let detailViewController = segue.destination as! FullMapViewController
-                let city = weatherModel.getWeather[(self.tableViewOutlet.indexPathForSelectedRow?.row)!]
-                detailViewController.setCityIdToShow(city.id)
-            }
+        if (segue.identifier == "showDetailWeatherMap") {
+            let detailViewController = segue.destination as! FullMapViewController
+            let city = weatherModel.getWeather[(self.tableViewOutlet.indexPathForSelectedRow?.row)!]
+            detailViewController.setCityIdToShow(city.id)
         }
     }
     
