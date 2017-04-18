@@ -9,32 +9,38 @@
 import UIKit
 import MapKit
 
-class WeatherTableViewController: UITableViewController, WeatherReloadAsyncDelegate {
+class WeatherTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WeatherReloadAsyncDelegate {
     let alertController = UIAlertController(title: "Error", message: "Can't load weather info", preferredStyle: .alert)
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     @IBOutlet weak var weatherMapOutlet: MKMapView!
+    
+    var refreshControl: UIRefreshControl!
+    
     lazy var weatherModel: WeatherModel = WeatherModel.getInstance()
 
     internal func reloadWeather() {
-        tableView.reloadData()
-        self.refreshControl?.endRefreshing()
+        tableViewOutlet.reloadData()
+        tableViewOutlet.refreshControl?.endRefreshing()
     }
 
     internal func onError() {
-        self.refreshControl?.endRefreshing()
+        tableViewOutlet.refreshControl?.endRefreshing()
         present(alertController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.addTarget(self, action: #selector(WeatherTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(WeatherTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        tableViewOutlet.refreshControl = self.refreshControl
+        
         setDefaultAlertAction()
         
         weatherModel.subscribe(self)
         
-        self.refreshControl?.beginRefreshing()
+        tableViewOutlet.refreshControl?.beginRefreshing()
         updateWeather()
     }
 
@@ -59,15 +65,15 @@ class WeatherTableViewController: UITableViewController, WeatherReloadAsyncDeleg
         super.didReceiveMemoryWarning()
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherModel.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
 
         let city = weatherModel.getWeather[indexPath.row]
@@ -81,7 +87,7 @@ class WeatherTableViewController: UITableViewController, WeatherReloadAsyncDeleg
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showDetailWeatherMap") {
             let detailViewController = segue.destination as! FullMapViewController
-            let city = weatherModel.getWeather[(self.tableView.indexPathForSelectedRow?.row)!]
+            let city = weatherModel.getWeather[(self.tableViewOutlet.indexPathForSelectedRow?.row)!]
             detailViewController.setCityIdToShow(city.id)
         }
     }
