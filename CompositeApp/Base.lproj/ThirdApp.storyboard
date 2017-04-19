@@ -61,7 +61,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EC-xW-eVW">
                                 <rect key="frame" x="368" y="20" width="368" height="394"/>
                                 <connections>
-                                    <segue destination="ZPe-F1-dTg" kind="embed" identifier="embededMap" id="NM9-cy-kw5"/>
+                                    <segue destination="WB4-YK-Y4Y" kind="embed" identifier="embededMap" id="aMh-il-QIs"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -125,11 +125,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Qpf-kr-cVb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xc1-aD-KWq">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="368" height="394"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f7W-lL-E9k">
-                                <rect key="frame" x="0.0" y="20" width="736" height="394"/>
+                                <rect key="frame" x="0.0" y="0.0" width="368" height="394"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="nQf-RE-I6V" appends="YES" id="5uw-LF-56A"/>
@@ -155,63 +155,10 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2425" y="-400"/>
-        </scene>
-        <!--Full Map View Controller-->
-        <scene sceneID="sHZ-ha-Dx1">
-            <objects>
-                <viewController modalPresentationStyle="currentContext" id="ZPe-F1-dTg" customClass="FullMapViewController" customModule="CompositeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pUu-r0-Kh6">
-                        <rect key="frame" x="0.0" y="0.0" width="368" height="394"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MSI-Vr-b15">
-                                <rect key="frame" x="0.0" y="0.0" width="368" height="394"/>
-                                <gestureRecognizers/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="MSI-Vr-b15" firstAttribute="top" secondItem="pUu-r0-Kh6" secondAttribute="top" id="WRk-sa-T9h"/>
-                            <constraint firstAttribute="bottom" secondItem="MSI-Vr-b15" secondAttribute="bottom" id="atD-BL-9M1"/>
-                            <constraint firstItem="MSI-Vr-b15" firstAttribute="leading" secondItem="pUu-r0-Kh6" secondAttribute="leading" id="cFy-d6-OFh"/>
-                            <constraint firstAttribute="trailing" secondItem="MSI-Vr-b15" secondAttribute="trailing" id="iub-I5-a3z"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="MSI-Vr-b15"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="WRk-sa-T9h"/>
-                                <exclude reference="atD-BL-9M1"/>
-                                <exclude reference="cFy-d6-OFh"/>
-                                <exclude reference="iub-I5-a3z"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact-widthClass=regular">
-                            <mask key="subviews">
-                                <include reference="MSI-Vr-b15"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="WRk-sa-T9h"/>
-                                <include reference="atD-BL-9M1"/>
-                                <include reference="cFy-d6-OFh"/>
-                                <include reference="iub-I5-a3z"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="FullMapView" destination="MSI-Vr-b15" id="tdb-8f-NOP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rPw-SO-RS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="QVA-PU-Wq9">
-                    <connections>
-                        <action selector="longPressOnMap:" destination="ZPe-F1-dTg" id="jrv-Ve-Vu0"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="2415" y="-1358"/>
+            <point key="canvasLocation" x="2186" y="-401"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aMh-il-QIs"/>
+    </inferredMetricsTieBreakers>
 </document>

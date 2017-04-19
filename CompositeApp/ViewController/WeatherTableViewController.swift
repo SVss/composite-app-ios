@@ -103,7 +103,7 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         var result = true
-        if ((identifier == "showDetailWeatherMap") && (self.isEqual(sender))) {
+        if (identifier == "showDetailWeatherMap") {
             result = showNextView
         }
         return result
