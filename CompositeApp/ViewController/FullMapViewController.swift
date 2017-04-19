@@ -88,13 +88,16 @@ class FullMapViewController: UIViewController, WeatherReloadAsyncDelegate {
     // WeatherReloadAsyncDelegate
     
     internal func reloadWeather() {
-        FullMapView.removeAnnotations(cityAnnotations)
-        cityAnnotations = [CityAnnotation]()
+//        FullMapView.removeAnnotations(cityAnnotations)
+//        cityAnnotations = [CityAnnotation]()
         for city in weatherModel.getWeather {
-//            print(city.id)
-            let cityAnnotation = CityAnnotation(city)
-            cityAnnotations.append(cityAnnotation)
-            FullMapView.addAnnotation(cityAnnotation)
+            if let annotation = cityAnnotations.first(where: { $0.id == city.id }) {
+                annotation.update(city)
+            } else {
+                let cityAnnotation = CityAnnotation(city)
+                cityAnnotations.append(cityAnnotation)
+                FullMapView.addAnnotation(cityAnnotation)
+            }
         }
     }
     

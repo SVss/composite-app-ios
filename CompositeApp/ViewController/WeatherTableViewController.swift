@@ -13,8 +13,8 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     let alertController = UIAlertController(title: "Error", message: "Can't load weather info", preferredStyle: .alert)
     
     @IBOutlet weak var tableViewOutlet: UITableView!
-    var embededMapController: FullMapViewController? = nil
-    var fullMapController: FullMapViewController? = nil
+    weak var embededMapController: FullMapViewController? = nil
+    weak var fullMapController: FullMapViewController? = nil
     
     var refreshControl: UIRefreshControl!
     var showNextView: Bool = UIDevice.current.orientation.isPortrait

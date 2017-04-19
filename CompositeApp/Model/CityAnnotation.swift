@@ -40,4 +40,11 @@ class CityAnnotation: NSObject, MKAnnotation {
         self.latitude = city.location.coordinate.latitude
         self.longitude = city.location.coordinate.longitude
     }
+    
+    public func update(_ city: City) {
+        if (city.id == self.id) {
+            self.title = city.name
+            self.subtitle = city.temperature
+        }
+    }
 }

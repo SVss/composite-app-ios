@@ -19,7 +19,6 @@
 		84C8F21B1EA62FDA005304F1 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F2191EA62FDA005304F1 /* RecipesTableViewController.swift */; };
 		84C8F21D1EA63050005304F1 /* RecipesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F21C1EA63050005304F1 /* RecipesModel.swift */; };
 		84C8F21F1EA63220005304F1 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 84C8F21E1EA6321F005304F1 /* data */; };
-		84C8F2211EA63515005304F1 /* PushableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F2201EA63515005304F1 /* PushableTabBarController.swift */; };
 		84C8F2251EA637F8005304F1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F2221EA637F8005304F1 /* City.swift */; };
 		84C8F2261EA637F8005304F1 /* CityAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F2231EA637F8005304F1 /* CityAnnotation.swift */; };
 		84C8F2271EA637F8005304F1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8F2241EA637F8005304F1 /* WeatherModel.swift */; };
@@ -45,7 +44,6 @@
 		84C8F2191EA62FDA005304F1 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipesTableViewController.swift; path = ViewController/RecipesTableViewController.swift; sourceTree = "<group>"; };
 		84C8F21C1EA63050005304F1 /* RecipesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipesModel.swift; path = Model/RecipesModel.swift; sourceTree = "<group>"; };
 		84C8F21E1EA6321F005304F1 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
-		84C8F2201EA63515005304F1 /* PushableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushableTabBarController.swift; path = ViewController/PushableTabBarController.swift; sourceTree = "<group>"; };
 		84C8F2221EA637F8005304F1 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Model/City.swift; sourceTree = "<group>"; };
 		84C8F2231EA637F8005304F1 /* CityAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityAnnotation.swift; path = Model/CityAnnotation.swift; sourceTree = "<group>"; };
 		84C8F2241EA637F8005304F1 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherModel.swift; path = Model/WeatherModel.swift; sourceTree = "<group>"; };
@@ -98,28 +96,51 @@
 		84C8F1F01E82BF91005304F1 /* CompositeApp */ = {
 			isa = PBXGroup;
 			children = (
+				84EE70431EA7CE6C002B0654 /* Model */,
+				84EE70411EA7CE06002B0654 /* View */,
+				84EE70421EA7CE3C002B0654 /* ViewController */,
 				84C8F21E1EA6321F005304F1 /* data */,
-				84C8F2121EA62E86005304F1 /* FirstApp.storyboard */,
-				84C8F2151EA62F8C005304F1 /* SecondApp.storyboard */,
-				84C8F22E1EA63843005304F1 /* ThirdApp.storyboard */,
-				84C8F2221EA637F8005304F1 /* City.swift */,
-				84C8F2231EA637F8005304F1 /* CityAnnotation.swift */,
-				84C8F2291EA63802005304F1 /* FullMapViewController.swift */,
-				84C8F22A1EA63802005304F1 /* WeatherTableViewController.swift */,
-				84C8F2241EA637F8005304F1 /* WeatherModel.swift */,
-				84C8F21C1EA63050005304F1 /* RecipesModel.swift */,
-				84C8F2181EA62FDA005304F1 /* RecipeDetailViewController.swift */,
-				84C8F2191EA62FDA005304F1 /* RecipesTableViewController.swift */,
-				84C8F2101EA60E34005304F1 /* CurrencyViewController.swift */,
 				84C8F1F11E82BF91005304F1 /* AppDelegate.swift */,
-				84C8F2201EA63515005304F1 /* PushableTabBarController.swift */,
-				84C8F1F31E82BF91005304F1 /* MainViewController.swift */,
-				84C8F1F51E82BF91005304F1 /* Main.storyboard */,
 				84C8F1F81E82BF91005304F1 /* Assets.xcassets */,
-				84C8F1FA1E82BF91005304F1 /* LaunchScreen.storyboard */,
 				84C8F1FD1E82BF91005304F1 /* Info.plist */,
 			);
 			path = CompositeApp;
+			sourceTree = "<group>";
+		};
+		84EE70411EA7CE06002B0654 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84C8F1FA1E82BF91005304F1 /* LaunchScreen.storyboard */,
+				84C8F1F51E82BF91005304F1 /* Main.storyboard */,
+				84C8F2121EA62E86005304F1 /* FirstApp.storyboard */,
+				84C8F2151EA62F8C005304F1 /* SecondApp.storyboard */,
+				84C8F22E1EA63843005304F1 /* ThirdApp.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		84EE70421EA7CE3C002B0654 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C8F1F31E82BF91005304F1 /* MainViewController.swift */,
+				84C8F2101EA60E34005304F1 /* CurrencyViewController.swift */,
+				84C8F2191EA62FDA005304F1 /* RecipesTableViewController.swift */,
+				84C8F2181EA62FDA005304F1 /* RecipeDetailViewController.swift */,
+				84C8F22A1EA63802005304F1 /* WeatherTableViewController.swift */,
+				84C8F2291EA63802005304F1 /* FullMapViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		84EE70431EA7CE6C002B0654 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84C8F21C1EA63050005304F1 /* RecipesModel.swift */,
+				84C8F2241EA637F8005304F1 /* WeatherModel.swift */,
+				84C8F2221EA637F8005304F1 /* City.swift */,
+				84C8F2231EA637F8005304F1 /* CityAnnotation.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		ECA4AEB83330996BB250F7E7 /* Frameworks */ = {
@@ -258,7 +279,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C8F2211EA63515005304F1 /* PushableTabBarController.swift in Sources */,
 				84C8F1F41E82BF91005304F1 /* MainViewController.swift in Sources */,
 				84C8F22C1EA63802005304F1 /* FullMapViewController.swift in Sources */,
 				84C8F2261EA637F8005304F1 /* CityAnnotation.swift in Sources */,
