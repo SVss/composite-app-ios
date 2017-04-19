@@ -22,25 +22,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ya9-q7-6Pn">
-                                <rect key="frame" x="0.0" y="0.0" width="368" height="414"/>
+                                <rect key="frame" x="0.0" y="20" width="368" height="394"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="weatherCell" textLabel="hGk-IF-pIA" detailTextLabel="3h3-OM-985" style="IBUITableViewCellStyleValue1" id="6OU-3M-ovW">
                                         <rect key="frame" x="0.0" y="28" width="368" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6OU-3M-ovW" id="doE-MC-GIJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hGk-IF-pIA">
-                                                    <rect key="frame" x="15" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <rect key="frame" x="15" y="11" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3h3-OM-985">
-                                                    <rect key="frame" x="289" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                                    <rect key="frame" x="289" y="11" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -58,62 +58,63 @@
                                     <outlet property="delegate" destination="fOg-bv-hZT" id="DWB-yD-JiL"/>
                                 </connections>
                             </tableView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A38-0g-mgM">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EC-xW-eVW">
                                 <rect key="frame" x="368" y="20" width="368" height="394"/>
-                                <gestureRecognizers/>
-                            </mapView>
+                                <connections>
+                                    <segue destination="ZPe-F1-dTg" kind="embed" identifier="embededMap" id="NM9-cy-kw5"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="A38-0g-mgM" secondAttribute="trailing" id="6Gk-Y8-N7a"/>
-                            <constraint firstItem="Ya9-q7-6Pn" firstAttribute="top" secondItem="Kwg-aB-smt" secondAttribute="top" id="AC2-Y5-0u3"/>
-                            <constraint firstItem="MHl-OM-go5" firstAttribute="top" secondItem="A38-0g-mgM" secondAttribute="bottom" id="ATc-mE-xgM"/>
-                            <constraint firstItem="Ya9-q7-6Pn" firstAttribute="leading" secondItem="Kwg-aB-smt" secondAttribute="leading" id="VnM-qE-KTd"/>
-                            <constraint firstItem="A38-0g-mgM" firstAttribute="top" secondItem="y61-gX-T1I" secondAttribute="bottom" id="iqJ-6V-rmZ"/>
-                            <constraint firstItem="Ya9-q7-6Pn" firstAttribute="width" secondItem="A38-0g-mgM" secondAttribute="width" id="kpa-Ht-HLI"/>
-                            <constraint firstAttribute="trailing" secondItem="Ya9-q7-6Pn" secondAttribute="trailing" id="lpg-3Q-cFQ"/>
-                            <constraint firstItem="A38-0g-mgM" firstAttribute="leading" secondItem="Ya9-q7-6Pn" secondAttribute="trailing" id="oKY-b4-Wdv"/>
-                            <constraint firstAttribute="bottom" secondItem="Ya9-q7-6Pn" secondAttribute="bottom" id="tIv-bf-XiI"/>
+                            <constraint firstItem="0EC-xW-eVW" firstAttribute="top" secondItem="y61-gX-T1I" secondAttribute="bottom" id="2n2-f7-1gO"/>
+                            <constraint firstItem="MHl-OM-go5" firstAttribute="top" secondItem="0EC-xW-eVW" secondAttribute="bottom" id="7c4-nu-Qxl"/>
+                            <constraint firstItem="MHl-OM-go5" firstAttribute="top" secondItem="Ya9-q7-6Pn" secondAttribute="bottom" id="BYY-Ss-L4k"/>
+                            <constraint firstItem="0EC-xW-eVW" firstAttribute="leading" secondItem="Ya9-q7-6Pn" secondAttribute="trailing" id="OQ0-NI-oI7"/>
+                            <constraint firstAttribute="trailing" secondItem="Ya9-q7-6Pn" secondAttribute="trailing" id="WeW-RF-UjS"/>
+                            <constraint firstItem="Ya9-q7-6Pn" firstAttribute="leading" secondItem="Kwg-aB-smt" secondAttribute="leading" id="a4a-kW-wXT"/>
+                            <constraint firstItem="0EC-xW-eVW" firstAttribute="width" secondItem="Ya9-q7-6Pn" secondAttribute="width" id="j0m-rh-8Lc"/>
+                            <constraint firstAttribute="trailing" secondItem="0EC-xW-eVW" secondAttribute="trailing" id="m7o-8P-JS1"/>
+                            <constraint firstItem="Ya9-q7-6Pn" firstAttribute="top" secondItem="y61-gX-T1I" secondAttribute="bottom" id="mEx-RP-BBT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="A38-0g-mgM"/>
+                                <exclude reference="0EC-xW-eVW"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6Gk-Y8-N7a"/>
-                                <exclude reference="iqJ-6V-rmZ"/>
-                                <exclude reference="oKY-b4-Wdv"/>
-                                <exclude reference="kpa-Ht-HLI"/>
-                                <exclude reference="lpg-3Q-cFQ"/>
-                                <exclude reference="ATc-mE-xgM"/>
+                                <exclude reference="2n2-f7-1gO"/>
+                                <exclude reference="OQ0-NI-oI7"/>
+                                <exclude reference="j0m-rh-8Lc"/>
+                                <exclude reference="m7o-8P-JS1"/>
+                                <exclude reference="WeW-RF-UjS"/>
+                                <exclude reference="7c4-nu-Qxl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="A38-0g-mgM"/>
+                                <include reference="0EC-xW-eVW"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6Gk-Y8-N7a"/>
-                                <include reference="iqJ-6V-rmZ"/>
-                                <include reference="oKY-b4-Wdv"/>
-                                <include reference="kpa-Ht-HLI"/>
-                                <include reference="ATc-mE-xgM"/>
+                                <include reference="2n2-f7-1gO"/>
+                                <include reference="OQ0-NI-oI7"/>
+                                <include reference="j0m-rh-8Lc"/>
+                                <include reference="m7o-8P-JS1"/>
+                                <include reference="7c4-nu-Qxl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="lpg-3Q-cFQ"/>
+                                <include reference="WeW-RF-UjS"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="tableViewOutlet" destination="Ya9-q7-6Pn" id="y7B-zP-fb4"/>
-                        <outlet property="weatherMapOutlet" destination="A38-0g-mgM" id="mpq-w8-ZCI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mv4-RI-8hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488.5869565217392" y="-400.00000000000006"/>
+            <point key="canvasLocation" x="1487.771739130435" y="-401.44927536231887"/>
         </scene>
         <!--City Map Weather-->
         <scene sceneID="3dX-xM-iET">
@@ -155,6 +156,57 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2425" y="-400"/>
+        </scene>
+        <!--Full Map View Controller-->
+        <scene sceneID="sHZ-ha-Dx1">
+            <objects>
+                <viewController id="ZPe-F1-dTg" customClass="FullMapViewController" customModule="CompositeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pUu-r0-Kh6">
+                        <rect key="frame" x="0.0" y="0.0" width="368" height="394"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MSI-Vr-b15">
+                                <rect key="frame" x="0.0" y="0.0" width="368" height="394"/>
+                                <gestureRecognizers/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MSI-Vr-b15" firstAttribute="top" secondItem="pUu-r0-Kh6" secondAttribute="top" id="WRk-sa-T9h"/>
+                            <constraint firstAttribute="bottom" secondItem="MSI-Vr-b15" secondAttribute="bottom" id="atD-BL-9M1"/>
+                            <constraint firstItem="MSI-Vr-b15" firstAttribute="leading" secondItem="pUu-r0-Kh6" secondAttribute="leading" id="cFy-d6-OFh"/>
+                            <constraint firstAttribute="trailing" secondItem="MSI-Vr-b15" secondAttribute="trailing" id="iub-I5-a3z"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MSI-Vr-b15"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="WRk-sa-T9h"/>
+                                <exclude reference="atD-BL-9M1"/>
+                                <exclude reference="cFy-d6-OFh"/>
+                                <exclude reference="iub-I5-a3z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="MSI-Vr-b15"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="WRk-sa-T9h"/>
+                                <include reference="atD-BL-9M1"/>
+                                <include reference="cFy-d6-OFh"/>
+                                <include reference="iub-I5-a3z"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="FullMapView" destination="MSI-Vr-b15" id="tdb-8f-NOP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPw-SO-RS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2415" y="-1358"/>
         </scene>
     </scenes>
 </document>

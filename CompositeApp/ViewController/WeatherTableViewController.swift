@@ -13,7 +13,7 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     let alertController = UIAlertController(title: "Error", message: "Can't load weather info", preferredStyle: .alert)
     
     @IBOutlet weak var tableViewOutlet: UITableView!
-    @IBOutlet weak var weatherMapOutlet: MKMapView!
+    var embededMapController: FullMapViewController? = nil
     
     var refreshControl: UIRefreshControl!
     var showNextView: Bool = UIDevice.current.orientation.isPortrait
@@ -94,6 +94,11 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let city = weatherModel.getWeather[indexPath.row]
+        embededMapController?.showCityOnMap(city.id)
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return showNextView
     }
@@ -103,6 +108,8 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
             let detailViewController = segue.destination as! FullMapViewController
             let city = weatherModel.getWeather[(self.tableViewOutlet.indexPathForSelectedRow?.row)!]
             detailViewController.setCityIdToShow(city.id)
+        } else if (segue.identifier == "embededMap") {
+            embededMapController = segue.destination as? FullMapViewController
         }
     }
     

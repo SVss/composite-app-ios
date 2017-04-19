@@ -73,7 +73,7 @@ class FullMapViewController: UIViewController, WeatherReloadAsyncDelegate {
         idToShow = id
     }
     
-    private func showCityOnMap(_ id: Int?) {
+    func showCityOnMap(_ id: Int?) {
         if let cityIndex = cityAnnotations.index(where: { $0.id == id }) {
             let city = cityAnnotations[cityIndex]
             FullMapView.selectAnnotation(city, animated: true)
@@ -90,7 +90,7 @@ class FullMapViewController: UIViewController, WeatherReloadAsyncDelegate {
         FullMapView.removeAnnotations(cityAnnotations)
         cityAnnotations = [CityAnnotation]()
         for city in weatherModel.getWeather {
-            print(city.id)
+//            print(city.id)
             let cityAnnotation = CityAnnotation(city)
             cityAnnotations.append(cityAnnotation)
             FullMapView.addAnnotation(cityAnnotation)
