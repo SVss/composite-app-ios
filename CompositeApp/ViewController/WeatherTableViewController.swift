@@ -14,6 +14,7 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     var embededMapController: FullMapViewController? = nil
+    var fullMapController: FullMapViewController? = nil
     
     var refreshControl: UIRefreshControl!
     var showNextView: Bool = UIDevice.current.orientation.isPortrait
@@ -97,17 +98,23 @@ class WeatherTableViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = weatherModel.getWeather[indexPath.row]
         embededMapController?.showCityOnMap(city.id)
+        fullMapController?.setCityIdToShow(city.id)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return showNextView
+        var result = true
+        if ((identifier == "showDetailWeatherMap") && (self.isEqual(sender))) {
+            result = showNextView
+        }
+        return result
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showDetailWeatherMap") {
-            let detailViewController = segue.destination as! FullMapViewController
+            fullMapController = segue.destination as? FullMapViewController
             let city = weatherModel.getWeather[(self.tableViewOutlet.indexPathForSelectedRow?.row)!]
-            detailViewController.setCityIdToShow(city.id)
+            fullMapController?.setCityIdToShow(city.id)
+            embededMapController?.showCityOnMap(city.id)
         } else if (segue.identifier == "embededMap") {
             embededMapController = segue.destination as? FullMapViewController
         }

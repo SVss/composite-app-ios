@@ -160,7 +160,7 @@
         <!--Full Map View Controller-->
         <scene sceneID="sHZ-ha-Dx1">
             <objects>
-                <viewController id="ZPe-F1-dTg" customClass="FullMapViewController" customModule="CompositeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="currentContext" id="ZPe-F1-dTg" customClass="FullMapViewController" customModule="CompositeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pUu-r0-Kh6">
                         <rect key="frame" x="0.0" y="0.0" width="368" height="394"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,6 +205,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPw-SO-RS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="QVA-PU-Wq9">
+                    <connections>
+                        <action selector="longPressOnMap:" destination="ZPe-F1-dTg" id="jrv-Ve-Vu0"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2415" y="-1358"/>
         </scene>
